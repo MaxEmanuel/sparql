@@ -1,0 +1,50 @@
+extends layout
+
+block header
+	style.
+		#query { height: 100px; }
+		.Block { padding: 5px; font-size:12pt; }
+		.dropdown-menu { font-size:8pt; line-height:10pt; }
+
+block body
+	.container-fluid
+		form
+			.row-fluid
+				.span12
+					h4 Rules			
+					textarea#code(name="code")
+			.row-fluid
+				.span12
+					h4 Query
+					textarea#query(name="query")
+					button.btn(type="submit",style="margin-top:5px") Execute
+
+		.row-fluid
+			.span12
+				pre.alert-error
+					code#error
+
+		.row-fluid
+			.span12
+				pre
+					code#result.xml
+
+block navigation
+	ul.nav
+		li.dropdown
+			a#drop1.dropdown-toggle(data-toggle="dropdown")
+				| Examples
+				b.caret
+			ul#example_list.dropdown-menu(role="menu",aria-labelledby="drop1")
+				li
+					a.example Find Vorlesung with id V5022
+					code.hidden.
+						doc('uni2')/id('V5022')
+				li(role="presentation")
+					a.example(role="menuitem") Find Augustinus.
+					code.hidden.
+						doc('uni')//*[./Name='Augustinus']
+				li(role="presentation")
+					a.example Find number of students.
+					code.hidden.
+						count(doc('uni')//Student)

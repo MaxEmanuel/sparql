@@ -1,0 +1,16 @@
+{
+  "name": "datalog",
+  "version": "0.0.2",
+  "main": "server.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v2.3.2",
+    "codemirror": "~3.15.0"
+  }
+}

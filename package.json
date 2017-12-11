@@ -1,0 +1,15 @@
+{
+  "name": "SPARQL",
+  "description": "A simple web interface for RDF.",
+  "version": "0.0.2",
+  "private": true,
+  "dependencies": {
+    "express": "4.x",
+    "express-validator" : "3.x",
+    "body-parser": "*",
+    "jade": "*",
+    "coffee-script": "*",
+    "nodemon": "*",
+    "bower": "*"
+  }
+}

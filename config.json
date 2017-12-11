@@ -1,0 +1,9 @@
+{
+	"port": 8080,
+	"rdfQuery": "/opt/rdf3x/bin/rdf3xquery",
+	"rdfLoad": "/opt/rdf3x/bin/rdf3xload",
+	"rdfDirectory": "/opt/rdf3x",
+	"examplesDirectory": "examples",
+	"tempDirectory": "/tmp",
+	"rdfTimeLimitMillis": 5000
+}
