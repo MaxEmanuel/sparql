@@ -61,5 +61,20 @@ this.examples=[
 			"    ] ."
 		],
 		"query": "PREFIX foaf: <http://xmlns.com/foaf/0.1/> SELECT ?name2 WHERE { ?person1 foaf:knows ?person2. ?person1 foaf:firstName \"Sokrates\" .?person2 foaf:name ?name2 .}"
+	},
+	{
+		"name": "Märchen",
+		"description": "Märchen über Märchen.",
+		"source": "&Uml;bung zur Vorlesung",
+		"ruleset": [
+                     "@prefix ex: <http://example.org>.",
+                     "ex:Rapunzel ex:hatAutor ex:Sokrates.",
+                     "ex:Rapunzel ex:erschienen 2006.",
+                     "ex:Aschenputtel ex:hatAutor ex:Archimedes.",
+                     "ex:Aschenputtel ex:hatAutor ex:Platon.",
+                     "ex:Schneewittchen ex:hatAutor ex:Platon.",
+                     "ex:Schneewittchen ex:erschienen 2004."
+		],
+		"query": "PREFIX ex: <http://example.org> SELECT ?book ?jahr WHERE { ?book ex:erschienen ?jahr .}"
 	}
 ]
