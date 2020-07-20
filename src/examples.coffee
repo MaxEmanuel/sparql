@@ -67,7 +67,7 @@ this.examples=[
 		"description": "Märchen über Märchen.",
 		"source": "&Uml;bung zur Vorlesung",
 		"ruleset": [
-                     "@prefix ex: <http://example.org>.",
+                     "@prefix ex: <http://example.org/>.",
                      "ex:Rapunzel ex:hatAutor ex:Sokrates.",
                      "ex:Rapunzel ex:erschienen 2006.",
                      "ex:Aschenputtel ex:hatAutor ex:Archimedes.",
@@ -75,6 +75,25 @@ this.examples=[
                      "ex:Schneewittchen ex:hatAutor ex:Platon.",
                      "ex:Schneewittchen ex:erschienen 2004."
 		],
-		"query": "PREFIX ex: <http://example.org> SELECT ?book ?jahr WHERE { ?book ex:erschienen ?jahr .}"
+		"query": "PREFIX ex: <http://example.org/> SELECT ?book ?jahr WHERE { ?book ex:erschienen ?jahr .}"
+	},
+	{
+		"name": "Märchenbücher",
+		"description": "Märchen über Märchen.",
+		"source": "&Uml;bung zur Vorlesung",
+		"ruleset": [
+                     "@prefix ex:<http://maerchen.example.org/>.",
+                     "ex:KHG1 ex:hatAutor ex:Grimm.",
+                     "ex:KHG1 ex:erschienen 1812.",
+                     "ex:Rapunzel ex:teilVon ex:KHG1.",
+                     "ex:DerGestiefelteKater ex:teilVon ex:KHG1.",
+                     "ex:KHG2 ex:hatAutor ex:Grimm.",
+                     "ex:KHG2 ex:erschienen 1837.",
+                     "ex:SchneeweißchenUndRosenrot ex:teilVon ex:KHG2.",
+                     "ex:Kindermaerchen ex:hatAutor ex:Anderson.",
+                     "ex:Kindermaerchen ex:erschienen 1837.",
+                     "ex:KleineMeerjungfrau ex:teilVon ex:Kindermaerchen."
+		],
+		"query": "PREFIX ex:<http://maerchen.example.org/> SELECT ?book WHERE {?book ex:hatAutor ex:Grimm. ?book ex:erschienen ?jahr FILTER (?jahr > 1836).}"
 	}
 ]
